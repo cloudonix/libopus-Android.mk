@@ -8,7 +8,7 @@ LOCAL_MODULE    := libopus
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/include $(LOCAL_PATH)/src $(LOCAL_PATH)/silk \
                     $(LOCAL_PATH)/celt $(LOCAL_PATH)/silk/fixed $(OGG_DIR)/include
 LOCAL_SRC_FILES := $(CELT_SOURCES) $(SILK_SOURCES) $(SILK_SOURCES_FIXED) \
-                   $(OPUS_SOURCES) $(OPUS_SOURCES_FLOAT) src/repacketizer_demo.c
+                   $(OPUS_SOURCES) $(OPUS_SOURCES_FLOAT)
 LOCAL_CFLAGS        := -DNULL=0 -DSOCKLEN_T=socklen_t -DLOCALE_NOT_USED \
                        -D_LARGEFILE_SOURCE=1 -D_FILE_OFFSET_BITS=64 \
                        -Drestrict='' -D__EMX__ -DOPUS_BUILD -DFIXED_POINT \
@@ -49,8 +49,4 @@ LOCAL_CFLAGS += -DOPUS_X86_MAY_HAVE_SSE4_1 -DOPUS_X86_PRESUME_SSE4_1
 endif
 
 endif
-
-EXTRA_PROGRAMS_TRUE := '#'
-EXTRA_PROGRAMS_FALSE := ''
-
 include $(BUILD_STATIC_LIBRARY)
